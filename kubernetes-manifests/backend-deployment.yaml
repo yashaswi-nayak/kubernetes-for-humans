@@ -1,0 +1,25 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: backend-deployment
+spec: 
+  selector: 
+    matchLabels: 
+      app: backend-deployment
+      tier: backend
+  template: 
+    metadata: 
+      labels: 
+        app: backend-deployment
+        tier: backend
+    spec: 
+      containers: 
+        - 
+          image: "yashdock90/kube-human-backend:simple"
+          imagePullPolicy: Always
+          name: backend-server
+          ports: 
+            - 
+              containerPort: 3000
+

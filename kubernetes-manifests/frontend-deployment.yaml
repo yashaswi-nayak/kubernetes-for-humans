@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: frontend-deployment
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend-deployment
+        tier: frontend
+    spec:
+      containers:
+        - image: yashdock90/kube-human-frontend:simple
+          imagePullPolicy: Always
+          name: frontend-app
+          ports:
+            - containerPort: 80
