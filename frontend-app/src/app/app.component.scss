@@ -213,16 +213,18 @@ a:hover {
 }
 
 footer {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  line-height: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1%;
+  align-content: center;
+  background-color: white;
 }
 
-footer a {
-  display: flex;
-  align-items: center;
-}
 
 .github-star-badge {
   color: #24292e;
@@ -287,15 +289,6 @@ svg#clouds {
     display: none;
     visibility: hidden;
   }
-}
-
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  align-content: center;
 }
 
 .inside-terminal {
