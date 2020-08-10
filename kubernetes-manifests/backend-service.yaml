@@ -6,9 +6,18 @@ metadata:
 spec:
   ports:
     - port: 3000
+      name: backend-service-1
       targetPort: 3000
+      protocol: TCP
+    - port: 3001
+      name: backend-service-2
+      targetPort: 3001
+      protocol: TCP
+    - port: 3002
+      name: backend-service-3
+      targetPort: 3002
       protocol: TCP
   selector:
     app: backend-deployment
     tier: backend
-  type: LoadBalancer
+  type: NodePort

@@ -15,8 +15,18 @@ spec:
         tier: backend
     spec:
       containers:
-        - image: "yashdock90/kube-human-backend:simple"
+        - image: "yashdock90/kube-human-backend-1:multiple"
           imagePullPolicy: Always
-          name: backend-server
+          name: backend-server-1
           ports:
             - containerPort: 3000
+        - image: "yashdock90/kube-human-backend-2:multiple"
+          imagePullPolicy: Always
+          name: backend-server-2
+          ports:
+            - containerPort: 3001
+        - image: "yashdock90/kube-human-backend-3:multiple"
+          imagePullPolicy: Always
+          name: backend-server-3
+          ports:
+            - containerPort: 3002

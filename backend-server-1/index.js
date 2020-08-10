@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 //Respond with "hello world" for requests that hit our root "/"
 app.get('/my-data', function (req, res) {
     res.json({
-        message: 'hello world'
+        message: 'hello world from 1'
     });
 });
 
