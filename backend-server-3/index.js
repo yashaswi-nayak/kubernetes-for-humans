@@ -15,9 +15,21 @@ app.use(bodyParser.urlencoded({
 // parse application/json
 app.use(bodyParser.json())
 //Respond with "hello world" for requests that hit our root "/"
+app.get('/', function (req, res) {
+    res.json({
+        message: 'Only Tres!!'
+    });
+});
+
 app.get('/my-data', function (req, res) {
     res.json({
         message: 'hello world from 3'
+    });
+});
+
+app.get('/tres/my-data', function (req, res) {
+    res.json({
+        message: 'TRES hello world from 3'
     });
 });
 

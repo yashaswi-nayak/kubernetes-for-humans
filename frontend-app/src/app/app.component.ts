@@ -17,10 +17,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
-  getData() {
-    this.appSvc.getData().subscribe(info => {
+  getData(svc) {
+    this.appSvc.getData(svc).subscribe(info => {
       console.log(info);
-      this.data += info.message;
+      this.data = "Service says: " + info.message;
       this.display = true;
     }, error => {
       console.log(error);

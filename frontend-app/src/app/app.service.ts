@@ -10,8 +10,13 @@ export class AppService {
 
   constructor(private httpCli: HttpClient) { }
 
-  getData(): Observable<any> {
-    let getUrl = environment.backendUrl + '/my-data';
+  getData(svc): Observable<any> {
+    let getUrl = environment.backendUrl;
+    switch (svc) {
+      case '1': getUrl = getUrl + '/uno/my-data'; break;
+      case '2': getUrl = getUrl + '/dos/'; break;
+      case '3': getUrl = getUrl + '/tres/my-data'; break;
+    }
     return this.httpCli.get(getUrl);
   }
 }

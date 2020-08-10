@@ -1,26 +1,24 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: simple-fanout-example
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/add-base-url: "true"
 spec:
-  backend:  
-    serviceName: backend-service
-    servicePort: 80
   rules:
-  - host: foo.bar.com
-    http:
-      paths:
-      - path: /uno/(.+)
-        backend:
-          serviceName: backend-service
-          servicePort: 3000
-      - path: /dos/*
-        backend:
-          serviceName: backend-service
-          servicePort: 3001
-      - path: /tres/(.+)
-        backend:
-          serviceName: backend-service
-          servicePort: 3002
+    - host: foo.bar.com
+      http:
+        paths:
+          - path: /uno(/|$)(.*)
+            backend:
+              serviceName: backend-service
+              servicePort: 3000
+          - path: /dos(/|$)(.*)
+            backend:
+              serviceName: backend-service
+              servicePort: 3001
+          - path: /tres(/|$)(.*)
+            backend:
+              serviceName: backend-service
+              servicePort: 3002

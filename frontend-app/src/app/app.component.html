@@ -55,8 +55,14 @@
   <input type="hidden" #selection>
 
   <div class="card-container">
-    <div class="card card-medium" tabindex="0" (click)="getData()">
-      Click Me!
+    <div class="card card-medium" tabindex="0" (click)="getData('1')">
+      Svc 1
+    </div>
+    <div class="card card-medium" tabindex="1" (click)="getData('2')">
+      Svc 2
+    </div>
+    <div class="card card-medium" tabindex="2" (click)="getData('3')">
+      Svc 3
     </div>
   </div>
 

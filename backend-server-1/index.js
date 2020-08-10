@@ -21,6 +21,12 @@ app.get('/my-data', function (req, res) {
     });
 });
 
+app.get('/uno/my-data', function (req, res) {
+    res.json({
+        message: 'UNO hello world from 1'
+    });
+});
+
 //listen to port 3000 by default
 app.listen(process.env.PORT || 3000, function (req, res) {
     console.log('LISTENING ON 3000');
